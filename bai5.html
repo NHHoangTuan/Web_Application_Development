@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      .loginForm {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .loginForm h1 {
+        text-align: center;
+        font-size: 200%;
+      }
+
+      .loginForm label {
+        font-weight: bold;
+        margin-right: 10px;
+        width: 100%;
+        font-size: 150%;
+      }
+
+      .loginForm p {
+        font-weight: bold;
+        font-size: 150%;
+      }
+
+      .loginForm hr {
+        height: 1px;
+        color: #0000ff;
+        background-color: #0000ff;
+      }
+
+      .loginForm input[type="button"] {
+        cursor: pointer;
+        border-radius: 10px;
+        padding: 10px;
+        border: 1px solid black;
+        font-size: 150%;
+        margin: 10px;
+      }
+
+      .loginForm table {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      .loginForm input[type="text"] {
+        width: 100%;
+        border-radius: 5px;
+        border: 0.5px solid gray;
+        padding: 10px;
+        font-size: 150%;
+        margin: 10px;
+      }
+
+      .loginForm input[type="button"]:hover {
+        background-color: darkgrey;
+      }
+
+
+    </style>
+  </head>
+
+  <body>
+    <div class="loginForm">
+      <h1 style="color: #8a2be2">Đăng nhập hệ thống</h1>
+      <hr style="color: #0000ff" />
+
+      <form>
+        <table>
+          <tr>
+            <td style="width: 30%;">
+              <label for="username">Tên đăng nhập</label>
+            </td>
+            <td style="width: 70%;">
+              <input type="text" id="username" placeholder="nhập tên"/>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="password">Mật khẩu</label>
+            </td>
+            <td>
+              <input type="text" id="password" placeholder="nhập mã số"/>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td>
+                <input type="button" value="Đăng nhập" />
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td>
+                <p>Quên mật khẩu / Đăng ký</p>
+            </td>
+          </tr>
+        </table>
+
+
+      </form>
+      <hr style="color: #0000ff" />
+    </div>
+  </body>
+</html>
