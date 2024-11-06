@@ -1,0 +1,247 @@
+<!-- views/products/detail.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="Untree.co" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap4" />
+
+    <!-- Fix đường dẫn CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="/css/tiny-slider.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <title><%= product.name %> | HAGAKO</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav
+      class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
+      arial-label="Hagako navigation bar"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="/products">Hagako<span>.</span></a>
+        <!-- ... rest of navigation ... -->
+      </div>
+    </nav>
+
+    <div class="before-footer-section">
+      <div class="container-fluid">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-3 productCart product">
+              <div class="rowCustom card align-items-center">
+                <div class="column text-center">
+                  <img
+                    src="<%= product.imageUrl %>"
+                    class="product-image"
+                    alt="<%= product.name %>"
+                  />
+                </div>
+                <div class="column">
+                  <h2 class="product-name text-left" style="font-weight: bold">
+                    <%= product.name %>
+                  </h2>
+                  <p>
+                    ID:
+                    <span class="product-id" style="font-weight: bold"
+                      ><%= product._id %></span
+                    >
+                  </p>
+                  <p>
+                    Category:
+                    <span style="font-weight: bold"
+                      ><%= product.category %></span
+                    >
+                  </p>
+                  <p>
+                    Status:
+                    <span style="font-weight: bold"
+                      ><%= product.stock > 0 ? 'Available' : 'Out of Stock'
+                      %></span
+                    >
+                  </p>
+                  <h2
+                    class="product-price"
+                    style="font-weight: bold; color: red"
+                  >
+                    <%= new Intl.NumberFormat('en-EN', { style: 'currency',
+                    currency: 'USD' }).format(product.price) %>
+                  </h2>
+
+                  <p style="display: flex; align-items: center; gap: 5px">
+                    Choose amount:
+                    <span class="quantity">
+                      <button class="minus-btnn pl-3">-</button>
+                      <input
+                        type="text"
+                        class="product-count"
+                        value="1"
+                        style="width: 50px; text-align: center"
+                        max="<%= product.stock %>"
+                      />
+                      <button class="plus-btnn">+</button>
+                    </span>
+                  </p>
+                  <button class="add-to-cart add-btn">ADD TO CART</button>
+                </div>
+                <div class="column">
+                  <h5 class="titleDetails">DESCRIPTION</h5>
+                  <p class="card-text"><%= product.description %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+      <div class="container relative">
+        <div class="sofa-img">
+          <img src="/images/sofa.png" alt="Image" class="img-fluid" />
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="subscription-form">
+              <h3 class="d-flex align-items-center">
+                <span class="me-1"
+                  ><img
+                    src="/images/envelope-outline.svg"
+                    alt="Image"
+                    class="img-fluid" /></span
+                ><span>Subscribe to Newsletter</span>
+              </h3>
+
+              <form action="#" class="row g-3">
+                <div class="col-auto">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter your name"
+                  />
+                </div>
+                <div class="col-auto">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div class="col-auto">
+                  <button class="btn btn-primary">
+                    <span class="fa fa-paper-plane"></span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-5 mb-5">
+          <div class="col-lg-4">
+            <div class="mb-4 footer-logo-wrap">
+              <a href="#" class="footer-logo">Hagako<span>.</span></a>
+            </div>
+            <p class="mb-4">
+              Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio
+              quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
+              vulputate velit imperdiet dolor tempor tristique. Pellentesque
+              habitant
+            </p>
+
+            <ul class="list-unstyled custom-social">
+              <li>
+                <a href="#"><span class="fa fa-brands fa-facebook-f"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="fa fa-brands fa-twitter"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="fa fa-brands fa-instagram"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="fa fa-brands fa-linkedin"></span></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="row links-wrap">
+              <div class="col-6 col-sm-6 col-md-3">
+                <ul class="list-unstyled">
+                  <li><a href="about.html">About us</a></li>
+                  <li><a href="shop.html">Services</a></li>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="contact.html">Contact us</a></li>
+                </ul>
+              </div>
+
+              <div class="col-6 col-sm-6 col-md-3">
+                <ul class="list-unstyled">
+                  <li><a href="about.html">Support</a></li>
+                  <li><a href="about.html">Knowledge base</a></li>
+                  <li><a href="about.html">Live chat</a></li>
+                </ul>
+              </div>
+
+              <div class="col-6 col-sm-6 col-md-3">
+                <ul class="list-unstyled">
+                  <li><a href="about.html">Jobs</a></li>
+                  <li><a href="about.html">Our team</a></li>
+                  <li><a href="about.html">Leadership</a></li>
+                  <li><a href="about.html">Privacy Policy</a></li>
+                </ul>
+              </div>
+
+              <div class="col-6 col-sm-6 col-md-3">
+                <ul class="list-unstyled">
+                  <li><a href="shop.html">Nordic Chair</a></li>
+                  <li><a href="shop.html">Kruzo Aero</a></li>
+                  <li><a href="shop.html">Ergonomic Chair</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-top copyright">
+          <div class="row pt-4">
+            <div class="col-lg-6">
+              <p class="mb-2 text-center text-lg-start">
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                . All Rights Reserved. &mdash; Designed with love by Hagako
+              </p>
+            </div>
+
+            <div class="col-lg-6 text-center text-lg-end">
+              <ul class="list-unstyled d-inline-flex ms-auto">
+                <li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Fix đường dẫn JS -->
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/tiny-slider.js"></script>
+    <script src="/js/custom.js"></script>
+  </body>
+</html>
