@@ -2,11 +2,11 @@
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 
-exports.getRegister = (req, res) => {
-  res.render("users/register");
+exports.getSignUp = (req, res) => {
+  res.render("users/signup");
 };
 
-exports.register = async (req, res) => {
+exports.signup = async (req, res) => {
   try {
     const { username, email, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -20,6 +20,10 @@ exports.register = async (req, res) => {
     await user.save();
     res.redirect("/products");
   } catch (error) {
-    res.status(400).render("users/register", { error: "Đăng ký thất bại" });
+    res.status(400).render("users/signup", { error: "Đăng ký thất bại" });
   }
+};
+
+exports.getSignIn = (req, res) => {
+  res.render("users/signin");
 };

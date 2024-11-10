@@ -2,7 +2,9 @@
 const mongoose = require("mongoose");
 const Product = require("../models/Product");
 
-mongoose.connect("mongodb://localhost:27017/hagako-web");
+mongoose.connect(
+  "mongodb+srv://hoangtuanstudy:hagako-password@hagako.bbl92.mongodb.net/"
+);
 
 const products = [
   {
