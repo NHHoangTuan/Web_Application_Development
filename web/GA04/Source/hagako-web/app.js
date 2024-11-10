@@ -24,6 +24,8 @@ app.use("/blog", require("./routes/blog"));
 app.use("/services", require("./routes/services"));
 app.use("/contact", require("./routes/contact"));
 app.use("/about", require("./routes/about"));
+app.use("/cart", require("./routes/cart"));
+app.use("/checkout", require("./routes/checkout"));
 app.use("/", require("./routes/users"));
 
 const PORT = process.env.PORT || 3000;

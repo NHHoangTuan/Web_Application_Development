@@ -18,7 +18,7 @@ exports.signup = async (req, res) => {
     });
 
     await user.save();
-    res.redirect("/products");
+    res.redirect("/index");
   } catch (error) {
     res.status(400).render("users/signup", { error: "Đăng ký thất bại" });
   }
